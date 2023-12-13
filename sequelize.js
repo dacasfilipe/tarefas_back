@@ -5,17 +5,17 @@ dotenv.config(); // PEGA TODAS CONFIGURAÇÕES DO .ENV
 
 // criando a constante seuquelize e passando informações
 const db = 
-    new Sequelize(process.env.DB_NAME,
-        process.env.DB_USER,
-        process.env.DB_PASSWORD,
-         {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,  
-  dialect: 'mysql',
-  define: {
-    timestamps: false
-  }
-});
+    new Sequelize({
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        dialect: 'mysql',
+        port: process.env.DB_PORT,
+        host: process.env.DB_HOST,
+        define: {
+          timestamps: false
+        }
+  });
 
-module.exports = db;
+  module.exports = db;
 
