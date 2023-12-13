@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "npm run build:prod",
-    "build:prod": "NODE_ENV=production node index.js"
+    "build": "node index.js"
+    
   },
   "dependencies": {
     "-": "^0.0.1",
