@@ -10,7 +10,7 @@ var app = express();
 //const PORT =  3001;
 
 //porta usada para fazer o deploy
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // importand o sequelize
 const { Sequelize } = require('sequelize');
@@ -35,6 +35,8 @@ app.use(cookieParser());
 app.use('/usuarios', usuarioRouter);
 app.use('/tarefas', tarefaRouter);
 app.use('/login', loginRouter);
+
+app.get('/', function(req, res) {res.send("hello world.")});
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
